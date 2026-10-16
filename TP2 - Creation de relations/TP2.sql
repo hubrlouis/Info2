@@ -11,7 +11,7 @@ CREATE TABLE culture_lohubert (ch varchar(3) references champ_lohubert, cereale 
 
 CREATE TABLE appartient_lohubert (nom varchar(20) not null, ch varchar(3) references champ_lohubert, primary key(nom, ch));
 
-\COPY appartient_lohubert FROM 'P:/BD-2annee/TP2/appartient.txt' WITH DELIMITER ',';
+CCOPY appartient_lohubert FROM 'P:/BD-2annee/TP2/appartient.txt' WITH DELIMITER ',';
 
 -- Q4
 SELECT AVG(superficie) FROM champ_lohubert, appartient_lohubert WHERE champ_lohubert.ch = appartient_lohubert.ch AND nom = 'DUPONT';
@@ -45,5 +45,13 @@ INSERT INTO culture_lohubert (ch, cereale, an) VALUES ('ch8', 'sarrasin', 2020);
 SELECT * FROM culture_lohubert;
 
 -- Q11 
-CREATE VIEW asuppr AS SELECT ch, cereale, an FROM culture_lohubert C, appartient_lohubert A WHERE C.
-DELETE FROM culture_lohubert WHERE an = 2019
+DELETE FROM culture_lohubert WHERE an = 2019 AND cereale = 'quinoa' AND ch IN (SELECT DISTINCT ch FROM appartient_lohubert WHERE nom = 'DUPONT');
+
+-- Q12
+GRANT SELECT ON champ_lohubert, culture_lohubert TO PUBLIC;
+
+-- Q13
+\z champ_lohubert
+
+-- Q14
+GRANT ALL ON appartient_lohubert TO PUBLIC;
