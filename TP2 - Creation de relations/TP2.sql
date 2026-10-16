@@ -51,7 +51,7 @@ DELETE FROM culture_lohubert WHERE an = 2019 AND cereale = 'quinoa' AND ch IN (S
 GRANT SELECT ON champ_lohubert, culture_lohubert TO PUBLIC;
 
 -- Q13
-\z champ_lohubert
+\z champ_lohubert;
 
 -- Q14
 GRANT ALL ON appartient_lohubert TO PUBLIC;
