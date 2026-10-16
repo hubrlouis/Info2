@@ -1,0 +1,8 @@
+ch1,Chantepie,65
+ch2,Mordelles,40
+ch3,Chantepie,25
+ch4,Thorigne,35
+ch5,Mordelles,20
+ch6,Le Rheu,15
+ch7,Chantepie,60
+ch8,Le Rheu,25
